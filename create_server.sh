@@ -2,7 +2,7 @@
 
 set -e
 
-die() { echo "$*" >&2 ; exit 1; }
+die() { echo "$*" >&2 ; exit 1 }
 
 test -e config.sh || die "config.sh missing"
 . config.sh

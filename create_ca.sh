@@ -2,7 +2,7 @@
 
 set -e
 
-die() { echo "$*" >&2 ; exit 1; }
+die() { echo "$*" >&2 ; exit 1 }
 
 test -e config.sh || die "config.sh missing"
 . config.sh
@@ -10,7 +10,7 @@ test -e config.sh || die "config.sh missing"
 test -s eduroamCA.key.pem && die "eduroamCA.key.pem: file already exists"
 test -s eduroamCA.cert.pem && die "eduroamCA.cert.pem: file already exists"
 
-# if user messes up passphrase n a previous attempt, openssl leaves an empty .key file
+# if user messes up passphrase in a previous attempt, openssl leaves an empty .key file
 test -e eduroamCA.key.pem && rm eduroamCA.key.pem
 
 cat <<__EOF__ > openssl.cnf.tmp
