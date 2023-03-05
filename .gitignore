@@ -1,0 +1,7 @@
+*.tmp
+
+*.pem
+eduroam_crl.der
+
+config.sh
+
