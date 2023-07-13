@@ -1,7 +1,6 @@
 *.tmp
-
 *.pem
 eduroam_crl.der
-
+eduroamCA.srl
 config.sh
 

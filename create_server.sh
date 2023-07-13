@@ -40,11 +40,14 @@ ${crl_url:+crlDistributionPoints = URI:$crl_url}
 
 __EOF__
 
+# -CAcreateserial required for OpenSSL < 1.1.1r only
+
 openssl x509 \
     -in server.certreq.pem.tmp -req \
     -CA eduroamCA.cert.pem -CAkey eduroamCA.key.pem \
     -out server.cert.pem \
     -extfile openssl.ext.tmp \
-    -days 825
+    -days 825 \
+    -CAcreateserial
 
 rm *.tmp
